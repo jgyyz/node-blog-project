@@ -98,4 +98,10 @@ router.post('/register', (req, res) => {
     })
 })
 
+// 退出
+router.get('/logout', (req, res) => {
+    req.session.user = null
+    res.redirect('/login')
+})
+
 module.exports = router
